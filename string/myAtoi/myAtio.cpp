@@ -45,8 +45,10 @@ int myAtio(string str)
         else{
             temp = str[j] - '0';
             integer = integer*10 + temp;
-            if(integer > (unsigned long long)numeric_limits<int>::max())
-            return positive ? numeric_limits<int>::max() : numeric_limits<int>::min();
+            //if(integer > (unsigned long long)numeric_limits<int>::max())
+            if(integer > (unsigned long long)0x7fffffff)
+            //return positive ? numeric_limits<int>::max() : numeric_limits<int>::min();
+            return positive ? 0x7fffffff : 0x80000000;
         }
     }
 
