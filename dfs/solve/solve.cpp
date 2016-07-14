@@ -22,9 +22,9 @@ void dfs(vector<vector<char> > &board, int i, int j)
     if(board[i][j] == 'O'){
         board[i][j] = 'C';
         dfs(board, i+1, j);
-        dfs(board, i-1, j);
+        if(i >= 1) dfs(board, i-1, j);
         dfs(board, i, j+1);
-        dfs(board, i, j-1);
+        if(j >= 1) dfs(board, i, j-1);
     }
 }
 

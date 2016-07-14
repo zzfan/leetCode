@@ -19,6 +19,8 @@ int uniquePaths_backTrack(int m, int n)
 //动态规划
 int uniquePaths(int m, int n)
 {
+    //这里的意图是想把第一行和第一列设为１的
+    //全部设为１也可以
     vector<vector<int> > v(m, vector<int>(n, 1));
     for(int i = 1; i<m; ++i){
         for(int j = 1; j<n; ++j){
@@ -29,6 +31,7 @@ int uniquePaths(int m, int n)
 }
 
 //改进算法
+//其实是一行一行算，节省了内存空间
 int uniquePaths1(int m, int n)
 {
     vector<int> v(n,1);
