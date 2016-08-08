@@ -10,6 +10,7 @@
 #include <string>
 using namespace std;
 
+//注意前面为0的情况
 string multiply(string num1, string num2)
 {
     int n1 = num1.size(), n2 = num2.size();

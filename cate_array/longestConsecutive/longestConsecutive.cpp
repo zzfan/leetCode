@@ -15,6 +15,7 @@ using namespace std;
 //排序再找的话时间就超过了O(n)了
 int longestConsecutive(vector<int>& nums)
 {
+    //把vector转化为哈希set
     unordered_set<int> hs;
     for(int i = 0; i<nums.size(); i++){
         hs.insert(nums[i]);
@@ -26,12 +27,14 @@ int longestConsecutive(vector<int>& nums)
         int curNum = nums[i];
         if(hs.find(curNum) != hs.end()){
             int nNum = curNum + 1;
+            //考虑递增
             while(hs.find(nNum) != hs.end()){
                 hs.erase(nNum);
                 curLen++;
                 nNum++;
             }
 
+            //考虑递减
             nNum = curNum - 1;
             while(hs.find(nNum) != hs.end()){
                 hs.erase(nNum);
