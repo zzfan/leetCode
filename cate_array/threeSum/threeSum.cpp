@@ -18,6 +18,7 @@ vector<vector<int> > threeSum(vector<int>& nums)
     sort(res.begin(), res.end());
 
     for(int i = 0; i<res.size(); i++){
+        //去重跟两个去重的原理一样，很关键
         if(i>0 && res[i] == res[i-1]){
             continue;
         }
@@ -25,6 +26,7 @@ vector<vector<int> > threeSum(vector<int>& nums)
         int begin = i+1, end = res.size()-1;
         int target = -res[i];
         while(begin < end){
+            //同理是两个的去重
             if(begin > i+1 && res[begin] == res[begin-1]){
                 begin++;
                 continue;
