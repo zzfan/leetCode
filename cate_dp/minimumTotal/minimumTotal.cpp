@@ -11,6 +11,7 @@ using namespace std;
 
 int minimumTotal(vector<vector<int> >& triangle)
 {
+    //比较简单的一个动态规划题
     int raws = triangle.size();
     if(raws == 0 || triangle[0].size() == 0)
         return 0;
