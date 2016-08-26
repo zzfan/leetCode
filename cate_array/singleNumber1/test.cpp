@@ -11,14 +11,12 @@ using namespace std;
 
 int singleNumber(vector<int> &nums)
 {
-        vector<int> flag(32, 0);
+    vector<int> flag(32, 0);
     for(int i = 0; i<nums.size(); i++){
-        int offset = 0;
+        int offset = 1;
         int temp = nums[i];
-        while(temp){
-            if(temp%2==1) ++flag[offset];
-            temp = temp/2;
-            offset++;
+        for(int k = 0; k<32; k++){
+            if(temp&(offset<<k)) flag[k]++;
         }
     }
     int res = 0;
